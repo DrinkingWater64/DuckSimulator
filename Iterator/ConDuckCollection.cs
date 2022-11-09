@@ -26,5 +26,10 @@ namespace DuckSimulator
         {
             _quacks.Add(duck);
         }
+
+        public void RemoveDuck(Quackable quackable)
+        {
+            this._quacks.Remove(quackable);
+        }
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DuckSimulator.Composite;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -40,6 +41,21 @@ namespace DuckSimulator
             {
                 it.DoQuack();
             }
+
+
+            Console.WriteLine("Composite");
+            DuckGroup duckGroup = new DuckGroup();
+            duckGroup.DoQuack();
+
+            Console.WriteLine("Adding Children");
+            duckGroup.Add((Component)duckFac.Create());
+            duckGroup.Add((Component)duckFac.Create());
+            duckGroup.Add((Component)duckFac.Create());
+            duckGroup.Add((Component)duckFac.Create());
+
+            Console.WriteLine("Playing Children");
+            duckGroup.Display();
+            
 
             
         }
