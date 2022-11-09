@@ -44,17 +44,17 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AdaptToDuck.cs" />
-    <Compile Include="ConDuckCollection.cs" />
-    <Compile Include="ConDuckIterator.cs" />
-    <Compile Include="CountingDuckFactory.cs" />
-    <Compile Include="DuckFactory.cs" />
+    <Compile Include="Iterator\ConDuckCollection.cs" />
+    <Compile Include="Iterator\ConDuckIterator.cs" />
+    <Compile Include="Factory\CountingDuckFactory.cs" />
+    <Compile Include="Factory\DuckFactory.cs" />
     <Compile Include="Duck.cs" />
     <Compile Include="DuckDecorator.cs" />
     <Compile Include="DuckWithCounter.cs" />
-    <Compile Include="Factory.cs" />
+    <Compile Include="Factory\Factory.cs" />
     <Compile Include="Goose.cs" />
-    <Compile Include="IDuckCollection.cs" />
-    <Compile Include="IDuckIterator.cs" />
+    <Compile Include="Iterator\IDuckCollection.cs" />
+    <Compile Include="Iterator\IDuckIterator.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Quackable.cs" />
