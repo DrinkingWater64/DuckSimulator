@@ -8,6 +8,6 @@ namespace DuckSimulator.Ovserver
 {
     interface Observer
     {
-        void Update(Observer subject);
+        void Update(Observable observable);
     }
 }

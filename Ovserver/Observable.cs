@@ -8,8 +8,8 @@ namespace DuckSimulator.Ovserver
 {
     interface Observable
     {
-        void Attatch();
-        void Detach();
+        void Attatch( Observer observer);
+        void Detach( Observer observer);
         void Notify();
     }
 }

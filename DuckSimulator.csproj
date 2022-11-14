@@ -43,7 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AdaptToDuck.cs" />
+    <Compile Include="Adaptar\AdaptToDuck.cs" />
     <Compile Include="Composite\Component.cs" />
     <Compile Include="Composite\DuckGroup.cs" />
     <Compile Include="Iterator\ConDuckCollection.cs" />
@@ -51,12 +51,13 @@
     <Compile Include="Factory\CountingDuckFactory.cs" />
     <Compile Include="Factory\DuckFactory.cs" />
     <Compile Include="Duck.cs" />
-    <Compile Include="DuckDecorator.cs" />
-    <Compile Include="DuckWithCounter.cs" />
+    <Compile Include="Decorator\DuckDecorator.cs" />
+    <Compile Include="Decorator\DuckWithCounter.cs" />
     <Compile Include="Factory\Factory.cs" />
-    <Compile Include="Goose.cs" />
+    <Compile Include="Adaptar\Goose.cs" />
     <Compile Include="Iterator\IDuckCollection.cs" />
     <Compile Include="Iterator\IDuckIterator.cs" />
+    <Compile Include="Ovserver\DuckObserver.cs" />
     <Compile Include="Ovserver\Observable.cs" />
     <Compile Include="Ovserver\Observer.cs" />
     <Compile Include="Program.cs" />

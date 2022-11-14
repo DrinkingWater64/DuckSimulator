@@ -1,4 +1,5 @@
 ﻿using DuckSimulator.Composite;
+using DuckSimulator.Ovserver;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -55,9 +56,39 @@ namespace DuckSimulator
 
             Console.WriteLine("Playing Children");
             duckGroup.Display();
-            
 
-            
+
+
+
+            Console.WriteLine("Observer implemetatuin.............................");
+            //Observer and observable
+            //....................................................
+            Duck duck1 = new Duck();
+            duck1.ID = "duck1";
+            Duck duck2 = new Duck();
+            duck2.ID = "duck2";
+            Duck duck3 = new Duck();
+            duck3.ID = "duck3";
+
+            DuckObserver duckObserver = new DuckObserver();
+
+            duck1.Attatch(duckObserver);
+            duck2.Attatch(duckObserver);
+            duck3.Attatch(duckObserver);
+
+            duck1.DoQuack();
+            duck2.DoQuack();
+            duck3.DoQuack();
+            duck3.DoQuack();
+
+            duckObserver.Show();
+
+            duck1.DoQuack();
+            duck2.Detach(duckObserver);
+            duck2.DoQuack();
+
+            duckObserver.Show();
+
         }
     }
 }
