@@ -12,24 +12,42 @@ namespace DuckSimulator
     { 
         static void Main(string[] args)
         {
+            // Duck and Goose
+            Console.WriteLine(".............................................................................................................");
+            Console.WriteLine("Adapter Implementation");
+            Console.WriteLine(".............................................................................................................");
             Duck duck = new Duck();
             Goose gooseee = new Goose();
             gooseee.Honk();
             Quackable goose = new AdaptToDuck(duck);
             goose.DoQuack();
 
+            Console.WriteLine("\n\n\n");
+            Console.WriteLine(".............................................................................................................");
             Console.WriteLine("ducks with counters");
+            Console.WriteLine(".............................................................................................................");
             Quackable d2 = new DuckWithCounter(duck);
             Quackable duckDec = new DuckDecorator(new DuckWithCounter(new Duck()));
             duckDec.DoQuack();
             duckDec.DoQuack();
             duckDec.DoQuack();
 
+
+
+            Console.WriteLine("\n\n\n");
+            Console.WriteLine(".............................................................................................................");
+            Console.WriteLine("Factory Implementation");
+            Console.WriteLine(".............................................................................................................");
             Factory duckFac = new DuckFactory();
             duckFac.Create().DoQuack();
             Factory duckFac2= new CountingDuckFactory();
             duckFac2.Create().DoQuack();
             
+
+            Console.WriteLine("\n\n\n");
+            Console.WriteLine(".............................................................................................................");
+            Console.WriteLine("Iterator Implementation");
+            Console.WriteLine(".............................................................................................................");
             ConDuckCollection conDuckCollection = new ConDuckCollection();
             conDuckCollection.AddDuck(duckFac.Create());
             conDuckCollection.AddDuck(duckFac.Create());
@@ -44,7 +62,10 @@ namespace DuckSimulator
             }
 
 
-            Console.WriteLine("Composite");
+            Console.WriteLine("\n\n\n");
+            Console.WriteLine(".............................................................................................................");
+            Console.WriteLine("Composite implementation");
+            Console.WriteLine(".............................................................................................................");
             DuckGroup duckGroup = new DuckGroup();
             duckGroup.DoQuack();
 
@@ -53,22 +74,24 @@ namespace DuckSimulator
             duckGroup.Add((Component)duckFac.Create());
             duckGroup.Add((Component)duckFac.Create());
             duckGroup.Add((Component)duckFac.Create());
+            duckGroup.Add(new Duck());
 
-            Console.WriteLine("Playing Children");
+            Console.WriteLine("Executing Children");
             duckGroup.Display();
 
 
 
 
+           
+            Console.WriteLine("\n\n\n");
+            Console.WriteLine(".............................................................................................................");
             Console.WriteLine("Observer implemetatuin.............................");
+            Console.WriteLine(".............................................................................................................");
             //Observer and observable
             //....................................................
             Duck duck1 = new Duck();
-            duck1.ID = "duck1";
             Duck duck2 = new Duck();
-            duck2.ID = "duck2";
             Duck duck3 = new Duck();
-            duck3.ID = "duck3";
 
             DuckObserver duckObserver = new DuckObserver();
 
