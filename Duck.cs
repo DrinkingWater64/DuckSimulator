@@ -9,6 +9,8 @@ namespace DuckSimulator
 {
     internal class Duck : Quackable, Component
     {
+
+
         public void Add(Component component)
         {
             throw new NotImplementedException();
