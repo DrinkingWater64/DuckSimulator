@@ -1,0 +1,16 @@
+@startuml
+class Duck {
+    observers : List<Observer>
+    + ID : string = "NaN"
+    + Add(component:Component) : void
+    + Attatch(observer:Observer) : void
+    + Detach(observer:Observer) : void
+    + Display() : void
+    + DoQuack() : void
+    + Notify() : void
+    + Remove(component:Component) : void
+}
+Quackable <|-- Duck
+Component <|-- Duck
+Observable <|-- Duck
+@enduml

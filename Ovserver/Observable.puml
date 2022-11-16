@@ -1,0 +1,7 @@
+@startuml
+interface Observable {
+    Attatch(observer:Observer) : void
+    Detach(observer:Observer) : void
+    Notify() : void
+}
+@enduml

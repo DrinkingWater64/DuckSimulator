@@ -1,0 +1,8 @@
+@startuml
+class AdaptToDuck {
+    goose : Goose
+    + AdaptToDuck(goose:Goose)
+    + DoQuack() : void
+}
+Quackable <|-- AdaptToDuck
+@enduml

@@ -19,7 +19,7 @@ namespace DuckSimulator
             Duck duck = new Duck();
             Goose gooseee = new Goose();
             gooseee.Honk();
-            Quackable goose = new AdaptToDuck(duck);
+            Quackable goose = new AdaptToDuck(gooseee);
             goose.DoQuack();
 
             Console.WriteLine("\n\n\n");
@@ -27,10 +27,8 @@ namespace DuckSimulator
             Console.WriteLine("ducks with counters");
             Console.WriteLine(".............................................................................................................");
             Quackable d2 = new DuckWithCounter(duck);
-            Quackable duckDec = new DuckDecorator(new DuckWithCounter(new Duck()));
-            duckDec.DoQuack();
-            duckDec.DoQuack();
-            duckDec.DoQuack();
+            d2.DoQuack();
+            d2.DoQuack();
 
 
 

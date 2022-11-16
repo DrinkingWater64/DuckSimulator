@@ -1,0 +1,9 @@
+@startuml
+class DuckWithCounter {
+    + counter : int = 0
+    + DuckWithCounter(duck:Quackable)
+    + IncrementCounter() : void
+    + <<override>> DoQuack() : void
+}
+DuckDecorator <|-- DuckWithCounter
+@enduml

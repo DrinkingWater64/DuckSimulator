@@ -1,0 +1,9 @@
+@startuml
+class DuckDecorator {
+    + duck : Quackable
+    + DuckDecorator(duck:Quackable)
+    # Duck : Quackable <<get>> <<set>>
+    + <<virtual>> DoQuack() : void
+}
+Quackable <|-- DuckDecorator
+@enduml

@@ -1,0 +1,6 @@
+@startuml
+class DuckFactory {
+    + <<override>> Create() : Quackable
+}
+Factory <|-- DuckFactory
+@enduml

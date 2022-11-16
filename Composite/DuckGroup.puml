@@ -1,0 +1,13 @@
+@startuml
+class DuckGroup {
+    ConDuckCollection : ConDuckCollection
+    iterator : IDuckIterator
+    + DuckGroup()
+    + Add(component:Component) : void
+    + Display() : void
+    + DoQuack() : void
+    + Remove(component:Component) : void
+}
+Component <|-- DuckGroup
+Quackable <|-- DuckGroup
+@enduml

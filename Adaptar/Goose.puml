@@ -1,0 +1,5 @@
+@startuml
+class Goose {
+    + Honk() : void
+}
+@enduml

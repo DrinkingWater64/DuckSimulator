@@ -1,0 +1,7 @@
+@startuml
+interface Component {
+    Add(component:Component) : void
+    Remove(component:Component) : void
+    Display() : void
+}
+@enduml

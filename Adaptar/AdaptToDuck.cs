@@ -8,16 +8,17 @@ namespace DuckSimulator
 {
     internal class AdaptToDuck : Quackable
     {
-        Duck duck;
+        Goose goose;
 
-        public AdaptToDuck(Duck duck)
+        public AdaptToDuck(Goose goose)
         {
-            this.duck = duck;
+            this.goose = goose;
         }
 
         public void DoQuack()
         {
-            duck.DoQuack();
+            goose.Honk();
+            Console.WriteLine("But as a duck");
         }
     }
 }

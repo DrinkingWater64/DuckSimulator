@@ -1,0 +1,12 @@
+@startuml
+class ConDuckIterator {
+    - ConDuckCollection : ConDuckCollection
+    - Current : int = 0
+    - Step : int = 1
+    + ConDuckIterator(conDuckCollection:ConDuckCollection)
+    + First() : Quackable
+    + GetIsCompleted() : bool
+    + Next() : Quackable
+}
+IDuckIterator <|-- ConDuckIterator
+@enduml

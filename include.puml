@@ -1,0 +1,113 @@
+@startuml
+class Duck {
+    observers : List<Observer>
+    + ID : string = "NaN"
+    + Add(component:Component) : void
+    + Attatch(observer:Observer) : void
+    + Detach(observer:Observer) : void
+    + Display() : void
+    + DoQuack() : void
+    + Notify() : void
+    + Remove(component:Component) : void
+}
+Quackable <|-- Duck
+Component <|-- Duck
+Observable <|-- Duck
+class Program {
+    {static} Main(args:string[]) : void
+}
+interface Quackable {
+    DoQuack() : void
+}
+class AdaptToDuck {
+    goose : Goose
+    + AdaptToDuck(goose:Goose)
+    + DoQuack() : void
+}
+Quackable <|-- AdaptToDuck
+class Goose {
+    + Honk() : void
+}
+interface Component {
+    Add(component:Component) : void
+    Remove(component:Component) : void
+    Display() : void
+}
+class DuckGroup {
+    ConDuckCollection : ConDuckCollection
+    iterator : IDuckIterator
+    + DuckGroup()
+    + Add(component:Component) : void
+    + Display() : void
+    + DoQuack() : void
+    + Remove(component:Component) : void
+}
+Component <|-- DuckGroup
+Quackable <|-- DuckGroup
+class DuckDecorator {
+    + duck : Quackable
+    + DuckDecorator(duck:Quackable)
+    # Duck : Quackable <<get>> <<set>>
+    + <<virtual>> DoQuack() : void
+}
+Quackable <|-- DuckDecorator
+class DuckWithCounter {
+    + counter : int = 0
+    + DuckWithCounter(duck:Quackable)
+    + IncrementCounter() : void
+    + <<override>> DoQuack() : void
+}
+DuckDecorator <|-- DuckWithCounter
+class CountingDuckFactory {
+    + <<override>> Create() : Quackable
+}
+Factory <|-- CountingDuckFactory
+class DuckFactory {
+    + <<override>> Create() : Quackable
+}
+Factory <|-- DuckFactory
+abstract class Factory {
+    + {abstract} Create() : Quackable
+}
+class ConDuckCollection {
+    - _quacks : List<Quackable>
+    + CreateIterator() : IDuckIterator
+    <<internal>> GetDuck(current:int) : Quackable
+    + Count : int <<get>>
+    + AddDuck(duck:Quackable) : void
+    + RemoveDuck(quackable:Quackable) : void
+}
+IDuckCollection <|-- ConDuckCollection
+class ConDuckIterator {
+    - ConDuckCollection : ConDuckCollection
+    - Current : int = 0
+    - Step : int = 1
+    + ConDuckIterator(conDuckCollection:ConDuckCollection)
+    + First() : Quackable
+    + GetIsCompleted() : bool
+    + Next() : Quackable
+}
+IDuckIterator <|-- ConDuckIterator
+interface IDuckCollection {
+    CreateIterator() : IDuckIterator
+}
+interface IDuckIterator {
+    First() : Quackable
+    Next() : Quackable
+    GetIsCompleted() : bool
+}
+class DuckObserver {
+    duckMaps : Dictionary<Observable, int>
+    + Update(observable:Observable) : void
+    + Show() : void
+}
+Observer <|-- DuckObserver
+interface Observable {
+    Attatch(observer:Observer) : void
+    Detach(observer:Observer) : void
+    Notify() : void
+}
+interface Observer {
+    Update(observable:Observable) : void
+}
+@enduml

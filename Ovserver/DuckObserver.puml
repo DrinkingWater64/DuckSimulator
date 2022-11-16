@@ -1,0 +1,8 @@
+@startuml
+class DuckObserver {
+    duckMaps : Dictionary<Observable, int>
+    + Update(observable:Observable) : void
+    + Show() : void
+}
+Observer <|-- DuckObserver
+@enduml

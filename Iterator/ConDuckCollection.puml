@@ -1,0 +1,11 @@
+@startuml
+class ConDuckCollection {
+    - _quacks : List<Quackable>
+    + CreateIterator() : IDuckIterator
+    <<internal>> GetDuck(current:int) : Quackable
+    + Count : int <<get>>
+    + AddDuck(duck:Quackable) : void
+    + RemoveDuck(quackable:Quackable) : void
+}
+IDuckCollection <|-- ConDuckCollection
+@enduml

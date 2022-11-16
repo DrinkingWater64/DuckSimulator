@@ -1,0 +1,5 @@
+@startuml
+interface Observer {
+    Update(observable:Observable) : void
+}
+@enduml
